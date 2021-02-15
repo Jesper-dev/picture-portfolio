@@ -1,7 +1,6 @@
 <template>
   <Nav/>
   <Main/>
-  
 </template>
 
 <script>

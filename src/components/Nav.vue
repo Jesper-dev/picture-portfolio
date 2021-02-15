@@ -1,6 +1,6 @@
 <template>
   <nav>
-      <h1>Pictures Portfolio</h1>
+    <h1>Pictures Portfolio</h1>
   </nav>
 </template>
 
@@ -12,7 +12,20 @@ export default {
 
 <style scoped>
     nav{
-        border: 1px solid black;
         background-color: #f8f1f1;
+        height: 18vh;
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        justify-content: center;
     }
+
+    nav > h1{
+        font-size: 3rem;
+        color: #ec4646;
+        font-family: 'Truculenta', sans-serif;
+        text-decoration: underline;
+    }
+
+   
 </style>

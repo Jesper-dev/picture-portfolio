@@ -12,7 +12,6 @@ export default {
 
 <style scoped>
     nav{
-        background-color: #f8f1f1;
         height: 18vh;
         display: flex;
         flex-flow: column wrap;

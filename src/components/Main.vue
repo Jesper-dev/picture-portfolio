@@ -1,15 +1,17 @@
 <template>
   <main>
     <div class="linksWrapper">
-      <div>
-        <button>Ocean</button>
-        <button>Space</button>
-        <button>Nature</button>
+      <div >
+        <button @click="handleClick">Ocean</button>
+        <button @click="handleClick">Space</button>
+        <button @click="handleClick">Nature</button>
       </div>
     </div>
 
+    <p>Theme is: {{typeVar}}</p>
+
     <div class="imageWrapper">
-      <img v-for="(pic, index) in pictures" :key="index" :src="pic.image" />
+      <img v-for="(pic, index) in filterPicsArr" :key="index" :src="pic.image"  />
     </div>
   </main>
 </template>
@@ -19,25 +21,45 @@ import ocean1 from "../assets/ocean1.jpg";
 import space1 from "../assets/space1.jpg";
 import nature1 from "../assets/nature1.jpg";
 
+
 export default {
   data() {
     return {
       pictures: [
         {
           image: ocean1,
-          type: "ocean"
+          type: "Ocean"
         },
         {
           image: space1,
-          type: "space"
+          type: "Space"
         },
         {
           image: nature1,
-          type: "nature"
+          type: "Nature"
         }
-      ]
+      ],
+
+      typeVar: null,
+
+      filterPicsArr: []
     };
-  }
+  },
+
+  methods: {
+    handleClick(e) {
+        this.typeVar = e.target.textContent
+        this.filterPicsArr = this.pictures.filter((picture) => picture.type == this.typeVar)
+        
+    }
+  },
+
+  // computed: {
+  //   filterPics() {
+        
+  //       return this.filterPicsArr;
+  //   }
+  // }
 };
 </script>
 

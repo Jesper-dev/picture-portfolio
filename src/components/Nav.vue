@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <h1>Pictures Portfolio</h1>
+    <!-- <h1>Pictures Portfolio</h1> -->
   </nav>
 </template>
 
@@ -17,6 +17,9 @@ export default {
         flex-flow: column wrap;
         align-items: center;
         justify-content: center;
+        width: 50%;
+        border: 1px solid black;
+        margin-left: 25%;
     }
 
     nav > h1{

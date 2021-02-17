@@ -1,18 +1,18 @@
 <template>
   <main>
-    <div class="linksWrapper">
+    <Sidebar />
+    <!-- <div class="linksWrapper">
       <div >
         <button @click="handleClick">Ocean</button>
         <button @click="handleClick">Space</button>
         <button @click="handleClick">Nature</button>
       </div>
-    </div>
+    </div> -->
 
-    <p>Theme is: {{typeVar}}</p>
 
-    <div class="imageWrapper">
+    <!-- <div class="imageWrapper">
       <img v-for="(pic, index) in filterPicsArr" :key="index" :src="pic.image"  />
-    </div>
+    </div> -->
   </main>
 </template>
 
@@ -21,8 +21,13 @@ import ocean1 from "../assets/ocean1.jpg";
 import space1 from "../assets/space1.jpg";
 import nature1 from "../assets/nature1.jpg";
 
+import Sidebar from "./Sidebar"
+
 
 export default {
+  components: {
+    Sidebar
+  },
   data() {
     return {
       pictures: [
@@ -40,9 +45,12 @@ export default {
         }
       ],
 
-      typeVar: null,
+      typeVar: "Space",
 
-      filterPicsArr: []
+      filterPicsArr: [{
+          image: space1,
+          type: "Space"
+        },]
     };
   },
 
@@ -50,21 +58,34 @@ export default {
     handleClick(e) {
         this.typeVar = e.target.textContent
         this.filterPicsArr = this.pictures.filter((picture) => picture.type == this.typeVar)
-        
     }
   },
-
-  // computed: {
-  //   filterPics() {
-        
-  //       return this.filterPicsArr;
-  //   }
-  // }
 };
 </script>
 
 <style scoped>
-.linksWrapper {
+
+main {
+  height: 100vh;
+  /* display: flex;
+  flex-flow: column wrap; */
+}
+
+.imageWrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 5%;
+}
+
+img {
+  max-width: 400px;
+  border: 2px solid #a20a0a;
+}
+
+
+/* .linksWrapper {
   width: 100%;
   height: 10%;
   display: flex;
@@ -95,23 +116,6 @@ export default {
   color: #a20a0a;
   font-size: 1.2rem;
   font-family: "Roboto Slab", serif;
-}
+} */
 
-main {
-  display: flex;
-  flex-flow: column wrap;
-}
-
-.imageWrapper {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-  width: 100%;
-  margin-top: 5%;
-}
-
-img {
-  max-width: 400px;
-  border: 2px solid #a20a0a;
-}
 </style>

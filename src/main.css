@@ -1,10 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&family=Truculenta:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 body{
-    background-color: #a3d2ca;
+    background-color: #fdfdfd;
     margin: 0%;
     padding: 0%;
     box-sizing: border-box;
-    height: 100vh;
     
 }

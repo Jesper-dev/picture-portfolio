@@ -1,20 +1,18 @@
 <template>
   <!-- <Nav/> -->
-  <Main/>
+  <Main />
 </template>
 
 <script>
 // import Nav from './components/Nav'
-import Main from './components/Main'
+import Main from "./components/Main";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     Main
   }
-}
+};
 </script>
 
-<style scoped>
- 
-</style>
+<style scoped></style>

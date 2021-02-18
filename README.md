@@ -1,3 +1,3 @@
 # picture-portfolio
 
-Created by Jesper Pettersson
+Created by Jesper Pettersson. This project is for learning Vue!

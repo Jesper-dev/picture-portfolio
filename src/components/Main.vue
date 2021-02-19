@@ -1,16 +1,24 @@
 <template>
   <main>
-    <Sidebar />
+    <Sidebar/>
+    
   </main>
 </template>
 
 <script>
 import Sidebar from "./Sidebar";
 
+
 export default {
+  data() {
+    return {
+      array: []
+    }
+  },
   components: {
     Sidebar
-  }
+  },
+  
 };
 </script>
 

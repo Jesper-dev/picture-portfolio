@@ -1,25 +1,46 @@
 <template>
   <div class="container">
-    <p>{{ arrowLeft }}</p>
-    <div class="imageContainer">
-      <img v-for="(pic, index) in array" :key="index" :src="pic.image" :alt="pic.alt"
-      />
-    </div>
-    <p>{{ arrowRight }}</p>
+    <p @click="prev">{{ arrowLeft }}</p>
+      <div class="imageContainer" v-for="(i, index) in [currentIndex]" :key=index>
+        <img :src="currentImage.image" />
+      </div>
+    <p @click="next">{{ arrowRight }}</p>
   </div>
 </template>
 
 <script>
 export default {
+  props: ["array"],
   data() {
     return {
       typeVar: "Space",
 
       arrowLeft: "<",
-      arrowRight: ">"
+      arrowRight: ">",
+      timer: null,
+      currentIndex: 0
     };
   },
-  props: ["array"]
+  mounted() {
+    console.log(this.array)
+  },
+
+  methods: {
+    startSlide() {
+      this.timer = setInterval(this.next, 4000)
+    },
+    next(){
+      this.currentIndex += 1
+    },
+    prev() {
+      this.currentIndex -= 1
+    }
+  },
+  computed: {
+    currentImage(){
+      return this.array[Math.abs(this.currentIndex) % this.array.length]
+    }
+  }
 };
 </script>
 
@@ -49,6 +70,7 @@ p {
   flex-flow: row nowrap;
   align-items: center;
   justify-content: center;
+
 }
 
 .imageContainer > img {

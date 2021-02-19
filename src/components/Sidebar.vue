@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper" >
     <h1
       class="animate__animated"
       @mouseover="hover = true"
@@ -10,7 +10,7 @@
     </h1>
 
     <div class="btnWrapper">
-      <ul id="categoryList" @click="liClick">
+      <ul id="categoryList" @click="liClick" >
         <li>Space</li>
         <li>Ocean</li>
         <li>Nature</li>
@@ -25,11 +25,8 @@
 </template>
 
 <script>
+import { PhotosArray } from "./Mock.js"
 import Pictures from "./Pictures";
-
-import ocean1 from "../assets/ocean1.jpg";
-import space1 from "../assets/space1.jpg";
-import nature1 from "../assets/nature1.jpg";
 
 export default {
   components: {
@@ -42,50 +39,25 @@ export default {
       hover: false,
       typeVar: "Space",
 
-      pictures: [
-        {
-          image: ocean1,
-          type: "Ocean",
-          alt: "Picture of Ocean"
-        },
-        {
-          image: space1,
-          type: "Space",
-          alt: "Picture of Space"
-        },
-        {
-          image: nature1,
-          type: "Nature",
-          alt: "Picture of Nature"
-        }
-      ],
+      photos: PhotosArray,
 
       filterPicsArr: [
-        {
-          image: space1,
-          type: "Space"
-        }
+        PhotosArray[2],
+        PhotosArray[3]
       ]
     };
   },
   methods: {
     liClick(e) {
       if (e.target.id == "categoryList") {
-        console.log("Ul was clicked!");
         return;
       } else {
         this.typeVar = e.target.textContent;
-        this.filterPicsArr = this.pictures.filter(
-          picture => picture.type == this.typeVar
+        this.filterPicsArr = this.photos.filter(
+          photo => photo.type == this.typeVar
         );
       }
     },
-
-    hoverFunc(e) {
-      console.log("Mouse Enter");
-      e.target.classList.add("animate__rotateIn");
-      console.log(e.target.classList);
-    }
   }
 };
 </script>
@@ -148,6 +120,10 @@ export default {
   width: 60%;
 }
 
+#categoryList > li.active {
+  width: 60%;
+}
+
 .iconWrapper {
   /* border: 1px solid black; */
   width: 80%;
@@ -161,7 +137,5 @@ export default {
   margin: 16px;
 }
 
-.active {
-  background-color: green;
-}
+
 </style>

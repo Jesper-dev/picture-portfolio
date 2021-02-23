@@ -28,7 +28,7 @@
         <li>Nature</li>
       </ul>
     </div>
-    
+
     <div class="iconWrapper" :class="{'open':showNav}">
       <i class="fab fa-instagram"></i>
       <i class="far fa-envelope"></i>
@@ -117,6 +117,7 @@ export default {
 
 .navIconOpen {
   color: white;
+  margin: 16px;
 }
 
 .wrapper > h1 {
@@ -186,7 +187,6 @@ export default {
   margin-top: 24px;
   background-color: black;
   color: white;
-  opacity: 70%;
   z-index: 50;
 }
 

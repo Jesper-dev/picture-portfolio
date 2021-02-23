@@ -5,13 +5,15 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "deploy": "npm run build && cd dist/ && cp index.html 200.html && surge ."
   },
   "dependencies": {
     "animate.css": "^4.1.1",
     "core-js": "^3.6.5",
     "sass": "^1.32.8",
     "sass-loader": "^11.0.1",
+    "surge": "^0.21.7",
     "vue": "^3.0.0"
   },
   "devDependencies": {

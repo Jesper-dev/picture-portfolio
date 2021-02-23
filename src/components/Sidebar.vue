@@ -44,7 +44,7 @@ export default {
       filterPicsArr: [
         PhotosArray[2],
         PhotosArray[3]
-      ]
+      ],
     };
   },
   methods: {
@@ -66,7 +66,7 @@ export default {
 .wrapper {
   /* border: 1px solid black; */
   border-right: 1px solid black;
-  height: 90vh;
+  min-height: 90vh;
   margin: 32px 16px;
   width: 20%;
 

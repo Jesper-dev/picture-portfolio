@@ -1,7 +1,6 @@
 <template>
   <main>
     <Sidebar/>
-    
   </main>
 </template>
 
@@ -26,6 +25,7 @@ export default {
 main {
   display: flex;
   flex-flow: row wrap;
+  min-height: 100vh;
 }
 .imageWrapper {
   display: flex;

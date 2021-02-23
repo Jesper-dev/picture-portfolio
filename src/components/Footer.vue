@@ -25,7 +25,6 @@ footer {
 .wrapper > h2 {
   margin: 16px;
   color: white;
-  opacity: 50%;
 }
 
 .wrapper {
@@ -50,7 +49,6 @@ footer {
   .wrapper > h2 {
     margin: 16px;
     color: white;
-    opacity: 100%;
     font-size: 1rem;
   }
 

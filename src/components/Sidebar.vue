@@ -1,20 +1,25 @@
 <template>
-  <div class="wrapper" >
+  <div class="wrapper">
     <h1
       class="animate__animated"
       @mouseover="hover = true"
       @mouseleave="hover = false"
-      :class="{ animate__rotateIn: hover, 'open':showNav }"
+      :class="{ animate__rotateIn: hover, open: showNav }"
     >
       J.P
     </h1>
 
-    <div id="navIcon" v-if="mobileView" @click="showNav = !showNav" :class="{'navIconOpen':showNav}">
-        <i class="fas fa-bars"></i>
+    <div
+      id="navIcon"
+      v-if="mobileView"
+      @click="showNav = !showNav"
+      :class="{ navIconOpen: showNav }"
+    >
+      <i class="fas fa-bars"></i>
     </div>
     <!-- For Mobile -->
-    <div class="btnWrapper" v-if="showNav" :class="{'navOpen':showNav}">
-      <ul id="categoryList" @click="liClick" >
+    <div class="btnWrapper" v-if="showNav" :class="{ navOpen: showNav }">
+      <ul id="categoryList" @click="liClick">
         <li>Space</li>
         <li>Ocean</li>
         <li>Nature</li>
@@ -22,15 +27,16 @@
     </div>
     <!-- For Desktop -->
     <div class="btnWrapper" v-if="!mobileView">
-      <ul id="categoryList" @click="liClick" >
+      <ul id="categoryList" @click="liClick">
         <li>Space</li>
         <li>Ocean</li>
         <li>Nature</li>
       </ul>
     </div>
 
-    <div class="iconWrapper" :class="{'open':showNav}">
+    <div class="iconWrapper" :class="{ open: showNav }">
       <i class="fab fa-instagram"></i>
+      <i class="fab fa-pinterest-p"></i>
       <i class="far fa-envelope"></i>
     </div>
   </div>
@@ -38,7 +44,7 @@
 </template>
 
 <script>
-import { PhotosArray } from "./Mock.js"
+import { PhotosArray } from "./Mock.js";
 import Pictures from "./Pictures";
 
 export default {
@@ -54,10 +60,7 @@ export default {
 
       photos: PhotosArray,
 
-      filterPicsArr: [
-        PhotosArray[2],
-        PhotosArray[3]
-      ],
+      filterPicsArr: [PhotosArray[2], PhotosArray[3]],
       mobileView: false,
       showNav: false
     };
@@ -72,19 +75,17 @@ export default {
           photo => photo.type == this.typeVar
         );
 
-        if(this.mobileView) {
-          this.showNav = !this.showNav
+        if (this.mobileView) {
+          this.showNav = !this.showNav;
         }
-        
       }
     },
     handleView() {
       this.mobileView = window.innerWidth <= 500;
-    },
-    
+    }
   },
   created() {
-    this.handleView()
+    this.handleView();
   }
 };
 </script>
@@ -107,17 +108,16 @@ export default {
 }
 
 #navIcon {
-  margin: 12px;
   font-size: 2rem;
-  width: 90%;
+  width: 100%;
   z-index: 100;
   display: flex;
   justify-content: flex-end;
 }
 
 .navIconOpen {
-  color: white;
-  margin: 16px;
+  color: black;
+  margin-left: 16px;
 }
 
 .wrapper > h1 {
@@ -184,18 +184,18 @@ export default {
 
 .navOpen {
   position: absolute;
-  margin-top: 24px;
+  margin-top: 54px;
   background-color: black;
   color: white;
-  z-index: 50;
+  z-index: 60;
 }
 
 .navOpen > #categoryList > li {
-  font-size: 1.4rem;
-  padding: 8px;
+  font-size: 1.6rem;
+  padding: 16px;
   margin: 16px;
   border-bottom: 2px solid white;
-  width: 50%;
+  width: 60%;
   text-align: center;
 }
 
@@ -203,20 +203,20 @@ export default {
   .wrapper {
     width: 100vw;
     border: none;
-    min-height: 50vh;
-  }
-
-  #categoryList > li {
-    font-size: 1.4rem;
-    padding: 8px;
-    margin: 16px;
-    border-bottom: 2px solid black;
-    width: 50%;
-    text-align: center;
+    min-height: 40vh;
   }
 
   #categoryList > li:hover {
     width: 50%;
+  }
+
+  .iconWrapper {
+    /* border: 1px solid black; */
+    width: 90%;
+    height: 25%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
   }
 
   .iconWrapper > i {
@@ -224,6 +224,4 @@ export default {
     margin: 16px;
   }
 }
-
-
 </style>

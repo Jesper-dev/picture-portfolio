@@ -1,9 +1,13 @@
 <template>
   <div class="container">
     <p @click="prev">{{ arrowLeft }}</p>
-      <div class="imageContainer" v-for="(i, index) in [currentIndex]" :key=index>
-        <img :src="currentImage.image" />
-      </div>
+    <div
+      class="imageContainer"
+      v-for="(i, index) in [currentIndex]"
+      :key="index"
+    >
+      <img :src="currentImage.image" />
+    </div>
     <p @click="next">{{ arrowRight }}</p>
   </div>
 </template>
@@ -22,23 +26,23 @@ export default {
     };
   },
   mounted() {
-    console.log(this.array)
+    console.log(this.array);
   },
 
   methods: {
     startSlide() {
-      this.timer = setInterval(this.next, 4000)
+      this.timer = setInterval(this.next, 4000);
     },
-    next(){
-      this.currentIndex += 1
+    next() {
+      this.currentIndex += 1;
     },
     prev() {
-      this.currentIndex -= 1
+      this.currentIndex -= 1;
     }
   },
   computed: {
-    currentImage(){
-      return this.array[Math.abs(this.currentIndex) % this.array.length]
+    currentImage() {
+      return this.array[Math.abs(this.currentIndex) % this.array.length];
     }
   }
 };
@@ -60,6 +64,7 @@ p {
   font-size: 4rem;
   cursor: pointer;
   margin: 24px;
+  font-weight: bold;
 }
 
 .imageContainer {
@@ -70,7 +75,6 @@ p {
   flex-flow: row nowrap;
   align-items: center;
   justify-content: center;
-
 }
 
 .imageContainer > img {
@@ -82,17 +86,19 @@ p {
 @media screen and (max-width: 400px) {
   .container {
     width: 100vw;
-    min-height: 40vh;
-    margin: 24px;
+    min-height: 10vh;
   }
 
   .imageContainer {
-    min-width: 70%;
+    min-width: 75%;
+    margin-bottom: 48px;
   }
 
   p {
-    font-size: 3.5rem;
+    font-size: 3rem;
     margin: 24px;
+    margin-bottom: 48px;
+    font-weight: bold;
   }
 
   #categoryList > li:hover {

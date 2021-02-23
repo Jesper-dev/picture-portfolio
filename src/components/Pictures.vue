@@ -78,4 +78,30 @@ p {
   max-width: 100%;
   max-height: 100%;
 }
+
+@media screen and (max-width: 400px) {
+  .container {
+    width: 100vw;
+    min-height: 40vh;
+    margin: 24px;
+  }
+
+  .imageContainer {
+    min-width: 70%;
+  }
+
+  p {
+    font-size: 3.5rem;
+    margin: 24px;
+  }
+
+  #categoryList > li:hover {
+    width: 50%;
+  }
+
+  .iconWrapper > i {
+    font-size: 2rem;
+    margin: 16px;
+  }
+}
 </style>

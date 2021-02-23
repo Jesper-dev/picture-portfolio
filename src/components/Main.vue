@@ -1,6 +1,6 @@
 <template>
   <main>
-    <Sidebar/>
+    <Sidebar />
   </main>
 </template>
 
@@ -11,9 +11,11 @@ import Sidebar from "./Sidebar";
 export default {
   data() {
     return {
-      array: []
+      array: [],
+      
     }
   },
+  
   components: {
     Sidebar
   },

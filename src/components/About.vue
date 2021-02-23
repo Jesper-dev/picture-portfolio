@@ -50,4 +50,26 @@ export default {
         margin: 16px;
         text-align: left;
     }
+
+    @media screen and (max-width: 400px) {
+        .aboutContainer {
+            min-height: 100vh;
+            display: flex;
+            flex-flow: column wrap;
+            align-items: center;
+        }
+
+        .aboutContainer > h1 {
+            margin: 38px;
+            font-size: 2.4rem;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .textContainer > p{
+            font-size: 1.2rem;
+            width: 80%;
+            margin: 24px;
+            text-align: left;
+        }
+    }
 </style>

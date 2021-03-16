@@ -3,7 +3,7 @@
     <div class="wrapper">
       <h2>Made by Jesper Pettersson</h2>
 
-      <a href="https://github.com/JesperKYH" target="_blank"
+      <a href="https://github.com/Jesper-dev" target="_blank"
         ><i class="fab fa-github"></i
       ></a>
     </div>
